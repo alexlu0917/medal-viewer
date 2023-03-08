@@ -89,8 +89,23 @@
             const mainLight = new DirectionalLight(0xffffff, 5);
             mainLight.position.set(10, 10, 10);
 
+            const mainLight1 = new DirectionalLight(0xffffff, 5);
+            mainLight1.position.set(-10, -10, -10);
+            
+            const mainLight2 = new DirectionalLight(0xffffff, 5);
+            mainLight2.position.set(-10, 10, -10);
+
+            const mainLight3 = new DirectionalLight(0xffffff, 5);
+            mainLight3.position.set(-10, -10, 10);
+
             const hemisphereLight = new HemisphereLight(0xddeeff, 0x202020, 5);
-            scene.add(mainLight, hemisphereLight);
+            scene.add(mainLight, hemisphereLight, mainLight1, mainLight2, mainLight3);
+            // scene.add(mainLight, hemisphereLight);
+
+            
+
+            // const hemisphereLight1 = new HemisphereLight(0xddeeff, 0x202020, 5);
+            // scene.add(mainLight1, hemisphereLight);
         }
 
         function animate(model) {
@@ -127,7 +142,7 @@
 
             const parrotPosition = new Vector3(0, 0, 0);
             loader.load(
-                "/models/Unity HD Render Pipeline (Metallic Standard).glb",
+                "/models/coin.glb",
                 (gltf) => onLoad(gltf, parrotPosition),
                 onProgress
             );
